@@ -27,6 +27,16 @@ def fazer_pedido(pedido):
 def calcular_total():
     return sum(pedidos)
 
+def descontinho():
+    total = calcular_total()
+    if total >= 20:
+        desconto = total * 0.05
+        total_com_desconto = total - desconto
+        print(f"Desconto aplicado: R${desconto:.2f}")
+        print(f"Total com desconto: R${total_com_desconto:.2f}")
+    else:
+        print(f"Total sem desconto: R${total:.2f}")
+
 def menu():
     print("\n==== Lanchonete ====")
     print("1 - Cadastrar Lanche\n2 - Mostrar Cardápio\n3 - Fazer Pedido\n4 - Mostrar total/\n5 - Sair")
@@ -52,7 +62,7 @@ def main():
             fazer_pedido(escolha)
             mensagem("Pedido realizado!")
         elif opcao == 4:
-            mensagem(f"O total é R${calcular_total()}")
+            descontinho()
         elif opcao == 5:
             mensagem("Saindo...")
             break
