@@ -8,7 +8,7 @@ valores = [80, 120, 90, 110, 85]
 total = 0
 
 for i in range(len(jogos)):
-    print(i, "-", jogos[i], "- R$", valores[1])
+    print(i, "-", jogos[i], "- R$", valores[i])
 
 #Usúario seleciona
 for i in jogos:
@@ -21,7 +21,7 @@ for i in jogos:
         continue
     else:
         break
-if total > 200:
+if total >= 200:
     desconto = total * 0.10
     total -= desconto
     print("desconto aplicado!")
