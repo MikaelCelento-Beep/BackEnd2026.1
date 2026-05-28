@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <h2>Context com variavel</h2>
+        <h1>{{mensagem}}</h1>
+
+        <h2>Context com dicionario</h2>
+        <ul>
+            <li>Nome: {{lista_cliente.nome}}</li>
+            <li>Idade: {{lista_cliente.idade}}</li>
+            <li>Nascimento: {{lista_cliente.nascimento}}</li>
+        </ul>
+        <p>Minha página inicial</p>
+
+        <hr>
+        <h2>Context com lista</h2>
+        <ol>
+            {%  for nome in dados  %}
+            <li>{{ nome }}</li>
+            {% endfor %}
+        </ol>
+
+        <hr>
+
+        <ol>
+            {% for carros in meus_carros %}
+                <li>Marca: {{carros.marca }}</li>
+                <li>Modelo: {{carros.modelo }}</li>
+                <li>Ano: {{carros.ano }}</li>
+            {% endfor %}
+
+
+        </ol>
+
+
+    </main>
+</body>
+</html>
