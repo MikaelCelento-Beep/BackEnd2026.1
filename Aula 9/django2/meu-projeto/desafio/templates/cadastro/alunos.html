@@ -17,7 +17,9 @@
                 <th>Idade: </th>
                 <th>Nascimento: </th>
                 <th>Cursos: </th>
+                <th>Turmas: </th>
                 <th>Ações: </th>
+
             </thead>
 
             <tbody> <!-- Corpo da tabela - Onde vao os dados -->
@@ -28,6 +30,7 @@
                     <td>{{ aluno.idade }}</td>
                     <td>{{ aluno.nascimento }}</td>
                     <td>{{ aluno.curso }}</td>
+                    <td>{{ aluno.turma }}</td>
                     <td><button>Editar</button>  <button>Excluir</button> </td>
                 </tr>                
                 {% endfor %}
