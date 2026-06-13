@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{%  block content %}
+<h1 class="titulo_alunos">{{ titulo }}</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Numero: </th>
+                <th>Cliente: </th>
+                <th>CPF: </th>
+                <th>Saldo: </th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for conta_individual in contas %}
+            <tr>
+                <td>{{ conta_individual.numero }}</td>
+                <td>{{ conta_individual.cliente.nome }}</td> <td>{{ conta_individual.cpf }}</td>
+                <td>{{ conta_individual.saldo }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

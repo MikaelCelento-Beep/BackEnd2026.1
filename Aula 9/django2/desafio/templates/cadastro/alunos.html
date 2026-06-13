@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{%  block content %}
+<h1 class="titulo_alunos">{{ titulo }}</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Nome: </th>
+                <th>Idade: </th>
+                <th>Nascimento: </th>
+                <th>Curso: </th>
+                <th>Turma: </th>
+                <th>Campus:</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for aluno in lista %}
+            <tr>
+                <td>{{ aluno.nome }}</td>
+                <td>{{ aluno.idade }}</td>
+                <td>{{ aluno.nascimento }}</td>
+                <td>{{ aluno.curso }}</td>
+                <td>{{ aluno.turma }}</td>
+                <td>{{ aluno.campus.unidade }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
