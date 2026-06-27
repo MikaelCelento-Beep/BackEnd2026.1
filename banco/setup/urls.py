@@ -16,11 +16,23 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-#importar as funções do arquivo views no nosso app
-from banco.views import index, abrir_conta
+
+#Importar as funções do arquivo viewa do nosso APP
+from banco.views import index, abrir_conta, conta, depositar, saque, login, home, logout, acessar_conta
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name="inicio"),
-    path('abrir_conta', abrir_conta, name="abrir_conta")
+    path('abrir_conta/', abrir_conta, name="abrir_conta"),
+
+    #Configurando o endereço para receber o id e informar a funçõa
+    path('conta/<int:conta_id>/', conta, name='conta'),
+    path('conta/<int:conta_id>/depositar', depositar, name='depositar'),
+    path('conta/<int:conta_id>/sacar', saque, name='sacar'),
+
+    #Cria a sessão
+    path('login/', login, name='login'),
+    path('home/', home, name='home'),
+    path('logout/', logout, name='logout'),
+    path('acessar_conta/', acessar_conta, name='acessar_conta')
 ]
